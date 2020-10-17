@@ -35,8 +35,14 @@
 </body>
 <script>
 document.getElementById("DownloadClick").onclick = function(event) {
-  alert("Downloading The File");
-  window.location = "https://drive.google.com/u/2/uc?export=download&confirm=KsYa&id=1IChk0jdGizXVuKpZuv03ewhKdp2NSSSa";
+alert("Downloading The File");
+var windowObjectReference;
+var windowFeatures = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
+
+function openRequestedPopup() {
+  windowObjectReference = window.open("https://drive.google.com/u/2/uc?export=download&confirm=KsYa&id=1IChk0jdGizXVuKpZuv03ewhKdp2NSSSa", "CNN_WindowName", windowFeatures);
+}
+openRequestedPopup()
   event.preventDefault();
 }
 </script>
